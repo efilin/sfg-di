@@ -2,6 +2,7 @@ package guru.springframework.sfgdi;
 
 import guru.springframework.sfgdi.controllers.*;
 import guru.springframework.sfgdi.examplebeans.FakeDataSource;
+import guru.springframework.sfgdi.examplebeans.FakeJMSBroker;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -24,6 +25,10 @@ public class SfgDiApplication {
         FakeDataSource dataSource = (FakeDataSource) ctx.getBean(FakeDataSource.class);
 
         System.out.println(dataSource.getUser());
+
+        FakeJMSBroker fakeJMSBroker = (FakeJMSBroker) ctx.getBean(FakeJMSBroker.class);
+
+        System.out.println(fakeJMSBroker.getUsername());
 
        /* System.out.println("-------------Primary Bean");
         System.out.println(myController.sayHello());
